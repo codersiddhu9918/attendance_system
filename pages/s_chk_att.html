@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Check Attendance{% endblock title %}
+
+{% block body %}
+	<div style="text-align:center">
+		<h3>Check Attendance</h3>
+		<a href="shome"><h3>Home</h3></a>
+	{% for i in res %}
+		<a href="chk_present?d={{i.adate}}">{{i.adate}}</a>
+	{% endfor %}	
+	</div>
+{% endblock body %}

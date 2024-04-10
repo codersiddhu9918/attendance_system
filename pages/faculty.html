@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Faculty Section{% endblock title %}
+
+{% block body %}
+	<div style="text-align:center">
+		<h3>Faculty Section</h3>
+		<form action="flogin" method="post">
+		{% csrf_token %}
+			Username: <input type="text" name="fuser"><br><br>
+			Password: <input type="password" name="fpass"><br><br>
+			<input type="submit" value="Login">
+		</form>
+		{{error}}
+	</div>
+{% endblock body %}

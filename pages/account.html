@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Create Account{% endblock title %}
+
+{% block body %}
+	<div style="text-align:center">
+		<h3>Create Account</h3>
+		<a href="home"><h3>Home</h3></a>
+		<form action="create_account" method="post">
+		{% csrf_token %}
+			Roll No: <input type="number" name="rollno"><br><br>
+			Name: <input type="text" name="sname"><br><br>
+			Password: <input type="password" name="spass"><br><br>
+			<input type="submit" value="Create Account">
+		</form>
+		{{msg}}
+	</div>
+{% endblock body %}
