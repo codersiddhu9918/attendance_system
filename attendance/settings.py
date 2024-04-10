@@ -25,7 +25,7 @@ SECRET_KEY = '%l2c0brgbc#-4#_8f2@(uu*(3tek7qwj!90^181y(5hj!6e4z+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['attendance-system-1.onrender.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
