@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'attendance.wsgi.application'
 # }
 DATABASES ={
     'default':{
-        dj_database_url('postgres://pgtodo_user:2P1XeyP3BWVbAANN3F5t4aVPJaNIRPcb@dpg-cnbjst7109ks7396ro8g-a.singapore-postgres.render.com/pgtodo')
+        dj_database_url('postgres://new_b6wq_user:o3yzoG5bUMMcySVYx428zE6i2e3KB26V@dpg-cob0ig20si5c73bu76k0-a.singapore-postgres.render.com/new_b6wq')
     }
 }
 
