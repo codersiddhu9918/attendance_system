@@ -82,9 +82,8 @@ WSGI_APPLICATION = 'attendance.wsgi.application'
 #     }
 # }
 DATABASES ={
-    'default':{
-        dj_database_url('postgres://new_b6wq_user:o3yzoG5bUMMcySVYx428zE6i2e3KB26V@dpg-cob0ig20si5c73bu76k0-a.singapore-postgres.render.com/new_b6wq')
-    }
+    'default':dj_database_url.parse('postgres://new_b6wq_user:o3yzoG5bUMMcySVYx428zE6i2e3KB26V@dpg-cob0ig20si5c73bu76k0-a.singapore-postgres.render.com/new_b6wq')
+
 }
 
 
