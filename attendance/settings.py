@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -52,7 +51,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'attendance.urls'
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -83,9 +81,7 @@ WSGI_APPLICATION = 'attendance.wsgi.application'
 # }
 DATABASES ={
     'default':dj_database_url.parse('postgres://new_b6wq_user:o3yzoG5bUMMcySVYx428zE6i2e3KB26V@dpg-cob0ig20si5c73bu76k0-a.singapore-postgres.render.com/new_b6wq')
-
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
