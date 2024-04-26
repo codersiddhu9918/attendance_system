@@ -1,6 +1,6 @@
 
 from pathlib import Path
-# import dj_database_url
+import dj_database_url
 # Build papipths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -69,19 +69,19 @@ WSGI_APPLICATION = 'attendance.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'django-attendance',
-        'USER': 'postgres',
-        'PASSWORD': 9918410452,
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
-# DATABASES ={
-#     'default':dj_database_url.parse('postgres://attendance_database_lku7_user:ehafSBMmfBC9fiqHCREgGmGpyvS7ijFX@dpg-com081ol5elc73brhcqg-a.singapore-postgres.render.com/attendance_database_lku7')
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'django-attendance',
+#         'USER': 'postgres',
+#         'PASSWORD': 9918410452,
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
 # }
+DATABASES ={
+    'default':dj_database_url.parse('postgres://attendance_database_lku7_user:ehafSBMmfBC9fiqHCREgGmGpyvS7ijFX@dpg-com081ol5elc73brhcqg-a.singapore-postgres.render.com/attendance_database_lku7')
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
