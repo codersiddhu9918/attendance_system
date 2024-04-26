@@ -1,5 +1,6 @@
 
 from pathlib import Path
+import os
 import dj_database_url
 # Build papipths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,15 +21,18 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'student.apps.StudentConfig',
-    'faculty.apps.FacultyConfig',
-    'principal.apps.PrincipalConfig',
+    # 'student.apps.StudentConfig',
+    # 'faculty.apps.FacultyConfig',
+    # 'principal.apps.PrincipalConfig',
 	'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'principal',
+    'student',
+    'faculty',
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -44,7 +48,7 @@ ROOT_URLCONF = 'attendance.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'pages'],
+        'DIRS': [os.path.join(BASE_DIR / 'pages')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -69,16 +73,16 @@ WSGI_APPLICATION = 'attendance.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'django-attendance',
-#         'USER': 'postgres',
-#         'PASSWORD': 9918410452,
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'django-attendance',
+        'USER': 'postgres',
+        'PASSWORD': 9918410452,
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
 DATABASES ={
     'default':dj_database_url.parse('postgres://attendance_database_lku7_user:ehafSBMmfBC9fiqHCREgGmGpyvS7ijFX@dpg-com081ol5elc73brhcqg-a.singapore-postgres.render.com/attendance_database_lku7')
 }
