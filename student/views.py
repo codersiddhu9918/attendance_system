@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,HttpResponse
 from .models import students
 from .models import present
 
@@ -28,32 +28,39 @@ def shome(request):
 		return redirect('/student/')
 		
 def slogout(request):
-	del request.session['rollno']
+	if request.session.get('rollno'):
+		del request.session['rollno']
+		return redirect('/student/')
 	return redirect('/student/')
 	
 def s_chk_att(request):
-	res = present.objects.all().order_by('-id')
-	return render(request,'s_chk_att.html',{'res':res})
+	if request.session.get('rollno'):
+		res = present.objects.all().order_by('-id')
+		return render(request,'s_chk_att.html',{'res':res})
+	return redirect('/student/')
 	
 def chk_present(request):
-	chk_date = request.GET['d']
-	
-	res = present.objects.filter(adate=chk_date)
-	k = res[0].s_ids
-	k = eval(k)
-	
-	d = []
-	for i in k:
-		o = students.objects.filter(id=int(i))
-		data = o[0]
-		d.append(data)
-	
-	if len(res)>0:
-		return render(request,'s_chk_present.html',{'data':d})
-	else:
-		return HttpResponse("Wrong Date!!!")
-	
-	
+	if request.session.get('rollno'):
+		chk_date = request.GET['d']
+
+		res = present.objects.filter(adate=chk_date)
+		k = res[0].s_ids
+		k = eval(k)
+
+		d = []
+		for i in k:
+			o = students.objects.filter(id=int(i))
+			data = o[0]
+			d.append(data)
+
+		if len(res) > 0:
+			return render(request, 's_chk_present.html', {'data': d})
+		else:
+			return HttpResponse("Wrong Date!!!")
+	return redirect('/student/')
+
+
+
 	
 	
 	

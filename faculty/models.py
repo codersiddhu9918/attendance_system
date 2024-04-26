@@ -7,3 +7,5 @@ class faculty_login(models.Model):
 	
 	def __str__(self):
 		return self.fuser
+
+
