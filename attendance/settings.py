@@ -73,16 +73,16 @@ WSGI_APPLICATION = 'attendance.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'django-attendance',
-        'USER': 'postgres',
-        'PASSWORD': 9918410452,
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'django-attendance',
+#         'USER': 'postgres',
+#         'PASSWORD': 9918410452,
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
 DATABASES ={
     'default':dj_database_url.parse('postgres://attendance_database_lku7_user:ehafSBMmfBC9fiqHCREgGmGpyvS7ijFX@dpg-com081ol5elc73brhcqg-a.singapore-postgres.render.com/attendance_database_lku7')
 }

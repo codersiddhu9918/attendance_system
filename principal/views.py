@@ -1,6 +1,8 @@
 from django.shortcuts import render,redirect
 from .models import principal_login
 from faculty.models import  faculty_login
+from django.shortcuts import render
+
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
@@ -56,3 +58,21 @@ def logout(request):
         del request.session['puser']
         return redirect('/principal/')
     return redirect('/principal/')
+
+
+def principal_account(request):
+	return render(request,'principal_auth.html')
+
+def principal_auth(request):
+	fuser = request.POST['fname']
+	fpass = request.POST['fpass']
+
+	# res = faculty.objects.filter(fname=fuser)
+
+	# if len(res) > 0:
+	#     return render(request, 'account.html', {'msg': 'Student already exists with this roll no.!!!'})
+	q = principal_login(puser=fuser, ppass=fpass)
+	q.save()
+	return render(request,'index.html',{'msg': 'Account Created Successfully!!!'})
+
+
