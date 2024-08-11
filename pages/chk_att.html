@@ -1,13 +1,23 @@
 {% extends 'base.html' %}
 
-{% block title %}Check Attendance{% endblock title %}
+{% block title %}Check Attendance{% endblock %}
 
 {% block body %}
-	<div style="text-align:center">
-		<h3>Check Attendance</h3>
-		<a href="home"><h3>Home</h3></a>
-	{% for i in res %}
-		<a href="chk_present?d={{i.adate}}">{{i.adate}}</a>
-	{% endfor %}	
-	</div>
-{% endblock body %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h3 class="text-center mb-4">Check Attendance</h3>
+            <div class="text-center mb-4">
+                <a href="home" class="btn btn-outline-secondary">Home</a>
+            </div>
+            <div class="list-group">
+                {% for i in res %}
+                <a href="chk_present?d={{ i.adate }}" class="list-group-item list-group-item-action">
+                    {{ i.adate }}
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

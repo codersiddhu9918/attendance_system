@@ -1,11 +1,27 @@
 {% extends 'base.html' %}
 
-{% block title %}Home{% endblock title %}
+{% block title %}Home{% endblock %}
 
 {% block body %}
-	<div style="text-align:center">
-		<a href="principal"><h3>Principal</h3></a>
-		<a href="faculty"><h3>Faculty Section</h3></a>
-		<a href="student"><h3>Student Section</h3></a>
-	</div>
-{% endblock body %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <h1 class="mb-4">Welcome to the Attendance System</h1>
+            <div class="card-deck">
+                <div class="card shadow p-4 bg-white rounded mb-4">
+                    <div class="card-body">
+                        <h3 class="card-title">Faculty Section</h3>
+                        <a href="faculty" class="btn btn-primary btn-block">Go to Faculty Section</a>
+                    </div>
+                </div>
+                <div class="card shadow p-4 bg-white rounded mb-4">
+                    <div class="card-body">
+                        <h3 class="card-title">Student Section</h3>
+                        <a href="student" class="btn btn-primary btn-block">Go to Student Section</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

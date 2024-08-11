@@ -1,16 +1,30 @@
 {% extends 'base.html' %}
 
-{% block title %}Faculty Section{% endblock title %}
+{% block title %}Faculty Section{% endblock %}
 
 {% block body %}
-	<div style="text-align:center">
-		<h3>Faculty Section</h3>
-		<form action="flogin" method="post">
-		{% csrf_token %}
-			Username: <input type="text" name="fuser"><br><br>
-			Password: <input type="password" name="fpass"><br><br>
-			<input type="submit" value="Login">
-		</form>
-		{{error}}
-	</div>
-{% endblock body %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h3 class="text-center mb-4">Faculty Section</h3>
+            <form action="flogin" method="post" class="shadow p-4 bg-white rounded">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="fuser">Username:</label>
+                    <input type="text" class="form-control" id="fuser" name="fuser" placeholder="Enter username">
+                </div>
+                <div class="form-group">
+                    <label for="fpass">Password:</label>
+                    <input type="password" class="form-control" id="fpass" name="fpass" placeholder="Enter password">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+            </form>
+            {% if error %}
+                <div class="alert alert-danger mt-3">
+                    {{ error }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

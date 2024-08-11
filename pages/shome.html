@@ -1,13 +1,27 @@
 {% extends 'base.html' %}
 
-{% block title %}Student Home{% endblock title %}
+{% block title %}Student Home{% endblock %}
 
 {% block body %}
-	<div style="text-align:center">
-		<h3>Student Section</h3>
-		
-		<a href="s_chk_att"><h4>Check Attendance</h4></a>
-		<a href="slogout"><h4>Logout</h4></a>
-		
-	</div>
-{% endblock body %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1 class="text-center mb-4">Student Section</h1>
+            <div class="card-deck">
+                <div class="card shadow p-4 bg-white rounded mb-4">
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Check Attendance</h4>
+                        <a href="s_chk_att" class="btn btn-primary btn-block">View Attendance</a>
+                    </div>
+                </div>
+                <div class="card shadow p-4 bg-white rounded mb-4">
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Logout</h4>
+                        <a href="slogout" class="btn btn-danger btn-block">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
