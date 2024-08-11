@@ -21,16 +21,12 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    # 'student.apps.StudentConfig',
-    # 'faculty.apps.FacultyConfig',
-    # 'principal.apps.PrincipalConfig',
-	'django.contrib.admin',
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'principal',
     'student',
     'faculty',
 ]
@@ -84,7 +80,7 @@ WSGI_APPLICATION = 'attendance.wsgi.application'
 #     }
 # }
 DATABASES ={
-    'default':dj_database_url.parse('postgres://attendance_database_lku7_user:ehafSBMmfBC9fiqHCREgGmGpyvS7ijFX@dpg-com081ol5elc73brhcqg-a.singapore-postgres.render.com/attendance_database_lku7')
+    'default':dj_database_url.parse('postgresql://attendance_database_4di4_user:he4VvjMbWzP9ySKLa586Om3lvPd01pdL@dpg-cqsbvk88fa8c73de8m2g-a.singapore-postgres.render.com/attendance_database_4di4')
 }
 
 # Password validation

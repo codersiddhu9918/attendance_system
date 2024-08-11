@@ -11,6 +11,5 @@ urlpatterns = [
     path('', views.index,name='index'),
     path('faculty/', include('faculty.urls')),
     path('student/', include('student.urls')),
-    path('principal/', include('principal.urls')),
     path('admin/', admin.site.urls),
 ]
