@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'attendance.wsgi.application'
 #     }
 # }
 DATABASES ={
-    'default':dj_database_url.parse('postgresql://attendance_database_4di4_user:he4VvjMbWzP9ySKLa586Om3lvPd01pdL@dpg-cqsbvk88fa8c73de8m2g-a.singapore-postgres.render.com/attendance_database_4di4')
+    'default':dj_database_url.parse('postgresql://attendance_database_8dzj_user:8aMF6g9rKbdTK0N05nsxXjxdIGFIOxbi@dpg-cqt4sebv2p9s73a7t4og-a.singapore-postgres.render.com/attendance_database_8dzj')
 }
 
 # Password validation
